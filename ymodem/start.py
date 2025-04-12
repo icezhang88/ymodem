@@ -21,5 +21,5 @@ cli = ModemSocket(read, write)
 # send multi files
 #cli.send(['./411APP_quick.bin'])
 
-cli.send(['./411APP.bin'])
+cli.send(['./411APP_quick.bin'])
 

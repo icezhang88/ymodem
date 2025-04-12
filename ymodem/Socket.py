@@ -6,7 +6,7 @@ import time
 from typing import Any, Callable, List, Optional, Union
 
 from ymodem.CRC import calc_crc16, calc_checksum
-from ymodem.Platform import Platform
+
 from ymodem.Protocol import ProtocolType, ProtocolSubType, ProtocolStyleManagement, XMODEM, YMODEM
 
 ACK = b'\x06'
@@ -239,10 +239,10 @@ class ModemSocket(Channel):
                     in any way.
                     '''
                     if self._protocol_features & YMODEM.USE_MODE_FIELD:
-                        if Platform.is_Linux():
-                            data += (" " + oct(0x8000)).encode("utf-8")
-                        else:
-                            data += (" 0").encode("utf-8")
+                        # if Platform.is_Linux():
+                        #     data += (" " + oct(0x8000)).encode("utf-8")
+                        # else:
+                        data += (" 0").encode("utf-8")
 
                     '''
                     Serial Number 
